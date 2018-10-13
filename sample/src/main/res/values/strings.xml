@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Yaalm</string>
+  <string name="location_status">Location Status</string>
+  <string name="location_data">Location Data</string>
+</resources>

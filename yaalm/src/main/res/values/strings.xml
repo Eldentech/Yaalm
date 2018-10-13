@@ -1,0 +1,7 @@
+<resources>
+  <string name="we_need_your_location_permission">We need your location permission to provide you accurate results.</string>
+  <string name="ok">OK</string>
+  <string name="location_unavailable">Your location currently unavailable</string>
+  <string name="location_access_required">We need your permission to reach your location.</string>
+  <string name="we_need_your_location_settings">You need to enable location to for accurate results.</string>
+</resources>
