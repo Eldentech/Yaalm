@@ -6,7 +6,7 @@ Basic usage:
 
 Implement Yaalm initialization inside application:
 
-```
+```kotlin
     class App: Application() {
         override fun onCreate() {
             super.onCreate()
@@ -18,7 +18,7 @@ Implement Yaalm initialization inside application:
 
 Implement overrides inside your fragment or activity and start observing:
 
-```
+```kotlin
 class LocationDataFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
