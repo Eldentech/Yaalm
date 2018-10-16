@@ -212,7 +212,7 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
     }
 
     /**
-     * *Default: 60 minute*
+     * *Default: 60 seconds*
      *
      * Sets Location Request Interval dynamically
      *
