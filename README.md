@@ -2,7 +2,7 @@
 
 Yaalm is a library aimed to simplify android location permission management and location data achivement using LiveData
 
-Yaalm requires AndroidX
+Yaalm only supports projects that have been migrated to [androidx](https://developer.android.com/jetpack/androidx/) for more information, read Google's [migration guide](https://developer.android.com/jetpack/androidx/migrate).
 
 Basic usage
 -----------
