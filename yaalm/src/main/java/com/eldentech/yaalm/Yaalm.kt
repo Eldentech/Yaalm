@@ -70,7 +70,7 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
          *
          *
          */
-        private fun configure(yaalmConfiguration: YaalmConfiguration) {
+        public fun configure(yaalmConfiguration: YaalmConfiguration) {
             if (INSTANCE == null)
                 INSTANCE = Yaalm(yaalmConfiguration)
             else
@@ -101,7 +101,8 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
      */
     val locationLiveData: LiveData<LocationData> by lazy {
         Transformations.map(internalLiveData) {
-            if (it.locationDataStatus == LocationDataStatus.NEED_TO_ENABLE_LOCATION || it.locationDataStatus == LocationDataStatus.REJECTED_TO_ENABLE_LOCATION) {
+            if (it.locationDataStatus == LocationDataStatus.NEED_TO_ENABLE_LOCATION ||
+                    it.locationDataStatus == LocationDataStatus.REJECTED_TO_ENABLE_LOCATION) {
                 if (yaalmConfiguration.showAutomaticLocationRequests) {
                     when (it.locationDataStatus) {
                         LocationDataStatus.NEED_TO_ENABLE_LOCATION -> resolve(it.resolvable)
@@ -215,6 +216,7 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
      *
      * Sets Location Request Interval dynamically
      *
+     * @param interval Update interval in milliseconds.
      */
     fun setUpdateInterval(interval: Long) {
         assert(!interval.isInValidRange(0,Long.MAX_VALUE)) {

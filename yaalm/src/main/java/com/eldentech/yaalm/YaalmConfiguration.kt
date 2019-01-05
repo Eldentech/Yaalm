@@ -140,10 +140,12 @@ class YaalmConfiguration private constructor(val context: Context) {
          * @throws [InvalidParameterException] if permissionLevel not equal android.permission.ACCESS_COARSE_LOCATION or android.permission.ACCESS_FINE_LOCATION
          */
         fun setsPermissionLevel(permissionLevel: String): Builder {
-            if(permissionLevel.isInValidList(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if(permissionLevel.isInValidList(Manifest.permission.ACCESS_COARSE_LOCATION,
+                                             Manifest.permission.ACCESS_FINE_LOCATION)) {
                 yaalmConfiguration.permissionLevel = permissionLevel
             } else {
-                throw InvalidParameterException("Permission can be only android.permission.ACCESS_COARSE_LOCATION or android.permission.ACCESS_FINE_LOCATION")
+                throw InvalidParameterException("Permission can be only android.permission.ACCESS_COARSE_LOCATION " +
+                        "or android.permission.ACCESS_FINE_LOCATION")
             }
             return this
         }
@@ -152,6 +154,8 @@ class YaalmConfiguration private constructor(val context: Context) {
          * *Default: [LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY]*
          *
          * Sets Location Request Accuracy accuracy
+         * @param accuracy Accuracy for location.
+         * @see [LocationRequest]
          *
          */
         fun setAccuracy(accuracy: Int): Builder {
