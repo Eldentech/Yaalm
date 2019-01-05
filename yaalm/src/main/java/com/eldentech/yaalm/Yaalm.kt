@@ -3,7 +3,6 @@ package com.eldentech.yaalm
 import android.app.Activity
 import android.content.Context
 import android.util.Log
-import androidx.annotation.IntDef
 import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
@@ -221,7 +220,7 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
         assert(!interval.isInValidRange(0,Long.MAX_VALUE)) {
             "Interval can not be lover than zero."
         }
-        yaalmConfiguration.updateInteval = interval
+        yaalmConfiguration.updateInterval = interval
         internalLiveData.registerForUpdates()
     }
 

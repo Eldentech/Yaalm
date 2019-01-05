@@ -62,7 +62,7 @@ class YaalmConfiguration private constructor(val context: Context) {
      * Location update interval in milliseconds
      * @see LocationRequest
      */
-    internal var updateInteval: Long = 60 * 1000
+    internal var updateInterval: Long = 60 * 1000
 
     /**
      * Builder class for [YaalmConfiguration]
@@ -183,7 +183,7 @@ class YaalmConfiguration private constructor(val context: Context) {
             assert(!interval.isInValidRange(0,Long.MAX_VALUE)) {
                 "Interval can not be lover than zero."
             }
-            yaalmConfiguration.updateInteval = interval
+            yaalmConfiguration.updateInterval = interval
             return this
         }
 

@@ -13,7 +13,6 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Task
 
 /**
  * Location Live Data provides [LocationData] as a LiveData
@@ -101,7 +100,7 @@ internal class LocationLiveData(private val configuration: YaalmConfiguration, p
                 fusedLocationProviderClient.lastLocation.addOnSuccessListener(executors.mainThread(), listener)
                 val locationRequest = LocationRequest.create()
                 locationRequest.priority = configuration.accuracy
-                locationRequest.interval = configuration.updateInteval
+                locationRequest.interval = configuration.updateInterval
                 val looper = Looper.getMainLooper()
                 fusedLocationProviderClient.removeLocationUpdates(locationCallback)
                 val task = fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, looper)
