@@ -36,6 +36,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.0.0-alpha3"
 
     testImplementation "junit:junit:$junit"
+    testImplementation "org.robolectric:robolectric:$robolectric"
+    testImplementation "androidx.test:core:$android_test_core"
     androidTestImplementation "androidx.test:runner:$androidx_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
