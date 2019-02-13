@@ -70,7 +70,7 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
          *
          *
          */
-        public fun configure(yaalmConfiguration: YaalmConfiguration) {
+        fun configure(yaalmConfiguration: YaalmConfiguration) {
             if (INSTANCE == null)
                 INSTANCE = Yaalm(yaalmConfiguration)
             else

@@ -84,7 +84,7 @@ class LocationPermissionManager internal constructor(val config: YaalmConfigurat
      */
     @SuppressLint("CheckResult")
     internal fun register(observer: LocationPermissionStatus.() -> Unit) {
-        locationPermissionStatusObservablePublish.subscribe { it: LocationPermissionStatus ->
+        locationPermissionStatusObservablePublish.subscribe {
             observer.invoke(it)
         }
     }
@@ -97,7 +97,7 @@ class LocationPermissionManager internal constructor(val config: YaalmConfigurat
                 Snackbar.LENGTH_INDEFINITE).setAction(R.string.ok) {
             val intent = Intent()
             intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-            val uri = Uri.fromParts("package", activity.getPackageName(), null)
+            val uri = Uri.fromParts("package", activity.packageName, null)
             intent.data = uri
             startActivity(activity, intent, null)
         }.show()
@@ -144,8 +144,10 @@ class LocationPermissionManager internal constructor(val config: YaalmConfigurat
                 } else {
                     locationPermissionStatus = LocationPermissionStatus.PERMISSION_DENIED
                     if (config.showAutomaticPermissionRequests) {
-                        if (activity.get() != null)
-                            showRequestRationale(activity.get()!!)
+                        activity.get()?.let {
+                            showRequestRationale(it)
+                        }
+
                     }
                 }
                 return
