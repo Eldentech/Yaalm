@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.util.Log
 import androidx.annotation.MainThread
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.google.android.gms.common.api.ResolvableApiException
@@ -75,6 +76,11 @@ class Yaalm private constructor(val yaalmConfiguration: YaalmConfiguration) {
                 INSTANCE = Yaalm(yaalmConfiguration)
             else
                 throw UnsupportedOperationException("You can configure Yaalm once inside app.")
+        }
+
+        @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+        internal fun clear() {
+            INSTANCE = null
         }
 
         /**
