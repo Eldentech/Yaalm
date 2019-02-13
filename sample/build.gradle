@@ -22,6 +22,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    testOptions.unitTests.includeAndroidResources = true
 }
 
 dependencies {
@@ -36,6 +37,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.0.0-alpha3"
 
     testImplementation "junit:junit:$junit"
+    testImplementation "io.mockk:mockk:$mockk"
+    testImplementation "com.natpryce:hamkrest:$hamkrest"
     testImplementation "org.robolectric:robolectric:$robolectric"
     testImplementation "androidx.test:core:$android_test_core"
     androidTestImplementation "androidx.test:runner:$androidx_version"

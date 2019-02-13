@@ -4,11 +4,14 @@ buildscript {
     ext.kotlin_version = '1.3.20'
     ext.androidx_version = '1.1.1'
     ext.androidx_appcompat_version = '1.0.2'
+    ext.androidx_livedata = "2.0.0"
     ext.robolectric = "4.1"
     ext.junit = "4.12"
     ext.espresso = "3.1.1"
     ext.android_test_core = "1.1.0"
     ext.play_services = "16.0.0"
+    ext.mockk = "1.9.1"
+    ext.hamkrest = "1.7.0.0"
     repositories {
         google()
        jcenter()
@@ -25,6 +28,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 }

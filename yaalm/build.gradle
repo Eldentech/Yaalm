@@ -39,16 +39,17 @@ dependencies {
     //RxKotlin
     implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
     implementation "com.google.android.gms:play-services-location:$play_services"
-    implementation "androidx.lifecycle:lifecycle-livedata:2.0.0"
+    implementation "androidx.lifecycle:lifecycle-livedata:$androidx_livedata"
     implementation "com.google.android.material:material:1.0.0"
-
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+
     testImplementation "junit:junit:$junit"
+    testImplementation "io.mockk:mockk:$mockk"
     testImplementation "org.robolectric:robolectric:$robolectric"
+    testImplementation "com.natpryce:hamkrest:$hamkrest"
     testImplementation "androidx.test:core:$android_test_core"
     androidTestImplementation "androidx.test:runner:$androidx_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

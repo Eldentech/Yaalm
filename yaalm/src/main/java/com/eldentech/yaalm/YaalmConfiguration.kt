@@ -135,7 +135,7 @@ class YaalmConfiguration private constructor(val context: Context) {
 
         /**
          * Sets the permission level for app.
-         * @param permissionlevel of [Manifest.permission.ACCESS_FINE_LOCATION] or [Manifest.permission.ACCESS_COARSE_LOCATION]
+         * @param permissionLevel of [Manifest.permission.ACCESS_FINE_LOCATION] or [Manifest.permission.ACCESS_COARSE_LOCATION]
          * @see [YaalmConfiguration.snackBarLocationSettingsMessage]
          * @throws [InvalidParameterException] if permissionLevel not equal android.permission.ACCESS_COARSE_LOCATION or android.permission.ACCESS_FINE_LOCATION
          */
@@ -178,14 +178,14 @@ class YaalmConfiguration private constructor(val context: Context) {
         }
 
         /**
-         * *Default: 60 minute*
+         * *Default: 60 seconds*
          *
          * Sets Location Request Interval in milliseconds
          *
          */
         fun setUpdateInterval(interval: Long): Builder {
-            assert(!interval.isInValidRange(0,Long.MAX_VALUE)) {
-                "Interval can not be lover than zero."
+            if(!interval.isInValidRange(0,Long.MAX_VALUE)) {
+               throw InvalidParameterException("Interval can not be lover than zero or higher than ${Long.MAX_VALUE - 1}}.")
             }
             yaalmConfiguration.updateInterval = interval
             return this
